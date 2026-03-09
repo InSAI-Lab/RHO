@@ -1,0 +1,3 @@
+black[jupyter]==24.4.0
+isort
+flake8

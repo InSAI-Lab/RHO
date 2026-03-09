@@ -1,0 +1,33 @@
+experiment:
+  name: ???
+  gpus: 4
+  seed: 0
+training:
+  lr: 1e-5
+  weight_decay: 1e-5
+  lr_scheduler:
+    name: ReduceLROnPlateau
+    mode: min   
+    factor: 0.7
+    patience: 2   
+    cooldown: 1       
+    min_lr: 1e-7    
+    eps: 1e-8                 
+    monitor: "loss/total/val"   
+    strict: true
+  finetune_from_checkpoint: null
+  trainer:
+    val_check_interval: 500
+    log_every_n_steps: 100
+    limit_val_batches: 1000
+    max_epochs: 30 
+    #devices: ${experiment.gpus} #Comment this line if DDP
+  checkpointing:
+    monitor: "loss/total/val"
+    save_top_k: 3
+    mode: "min"
+
+hydra:
+  job:
+    name: ${experiment.name}
+    chdir: false
