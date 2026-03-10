@@ -372,7 +372,7 @@ class Mapillary2KValDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_2kval",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL",
+        "data_dir": DATASETS_PATH / "RHO",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -395,7 +395,7 @@ class Mapillary2KValDataModule(pl.LightningDataModule):
         self.root = Path(self.cfg.data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL")
+            self.local_dir = Path(self.local_dir, "RHO")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -1124,7 +1124,7 @@ class MapillaryPanoDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
+        "data_dir": DATASETS_PATH / "RHO_clean",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -1952,8 +1952,8 @@ class MapillaryPanoRainyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_rainy",
-        "clean_data_dir": DATASETS_PATH / "MGL_final",
+        "data_dir": DATASETS_PATH / "RHO_rainy",
+        "clean_data_dir": DATASETS_PATH / "RHO_clean",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -1978,7 +1978,7 @@ class MapillaryPanoRainyDataModule(pl.LightningDataModule):
         self.clean_root = Path(self.cfg.clean_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_rainy")
+            self.local_dir = Path(self.local_dir, "RHO_rainy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -2368,8 +2368,8 @@ class MapillaryPanoNightDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_night",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_night",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -2394,7 +2394,7 @@ class MapillaryPanoNightDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_night")
+            self.local_dir = Path(self.local_dir, "RHO_night")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -2784,8 +2784,8 @@ class MapillaryPanoFoggyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_foggy",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_foggy",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -2810,7 +2810,7 @@ class MapillaryPanoFoggyDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_foggy")
+            self.local_dir = Path(self.local_dir, "RHO_foggy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -3200,8 +3200,8 @@ class MapillaryPanoSnowyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_snowy",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_snowy",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -3226,7 +3226,7 @@ class MapillaryPanoSnowyDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_snowy")
+            self.local_dir = Path(self.local_dir, "RHO_snowy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -3616,8 +3616,8 @@ class MapillaryPanoOverExposureDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_over_exposure",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_over_exposure",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -3642,7 +3642,7 @@ class MapillaryPanoOverExposureDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_over_exposure")
+            self.local_dir = Path(self.local_dir, "RHO_over_exposure")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -4032,8 +4032,8 @@ class MapillaryPanoUnderExposureDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_under_exposure",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_under_exposure",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -4058,7 +4058,7 @@ class MapillaryPanoUnderExposureDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_under_exposure")
+            self.local_dir = Path(self.local_dir, "RHO_under_exposure")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -4448,8 +4448,8 @@ class MapillaryPanoMotionBlurDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_motion_blur",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_motion_blur",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -4474,7 +4474,7 @@ class MapillaryPanoMotionBlurDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_motion_blur")
+            self.local_dir = Path(self.local_dir, "RHO_motion_blur")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -4864,7 +4864,7 @@ class MapillaryPanoDataModuleOrigin(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
+        "data_dir": DATASETS_PATH / "RHO_clean",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -4888,7 +4888,7 @@ class MapillaryPanoDataModuleOrigin(pl.LightningDataModule):
         self.root = Path(self.cfg.data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_final")
+            self.local_dir = Path(self.local_dir, "RHO_clean")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -5903,7 +5903,7 @@ class Mapillary360DataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_360",
+        "data_dir": DATASETS_PATH / "RHO_360",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -5926,7 +5926,7 @@ class Mapillary360DataModule(pl.LightningDataModule):
         self.root = Path(self.cfg.data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_360")
+            self.local_dir = Path(self.local_dir, "RHO_360")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -6222,8 +6222,8 @@ class MapillaryRainyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_rainy",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_rainy",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_rainy",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -6247,7 +6247,7 @@ class MapillaryRainyDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_rainy")
+            self.local_dir = Path(self.local_dir, "RHO_rainy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -6543,8 +6543,8 @@ class MapillarySnowyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_snowy",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_snowy",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_snowy",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -6568,7 +6568,7 @@ class MapillarySnowyDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_snowy")
+            self.local_dir = Path(self.local_dir, "RHO_snowy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -6864,8 +6864,8 @@ class MapillaryNightDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_night",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_night",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_night",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -6889,7 +6889,7 @@ class MapillaryNightDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_night")
+            self.local_dir = Path(self.local_dir, "RHO_night")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -7185,8 +7185,8 @@ class MapillaryFoggyDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_foggy",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_foggy",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_foggy",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -7210,7 +7210,7 @@ class MapillaryFoggyDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_foggy")
+            self.local_dir = Path(self.local_dir, "RHO_foggy")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -7506,8 +7506,8 @@ class MapillaryOverExposureDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_over_exposure",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_over_exposure",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_over_exposure",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -7531,7 +7531,7 @@ class MapillaryOverExposureDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_over_exposure")
+            self.local_dir = Path(self.local_dir, "RHO_over_exposure")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -7827,8 +7827,8 @@ class MapillaryUnderExposureDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_over_exposure",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_under_exposure",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_under_exposure",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -7852,7 +7852,7 @@ class MapillaryUnderExposureDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_under_exposure")
+            self.local_dir = Path(self.local_dir, "RHO_under_exposure")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
@@ -8148,8 +8148,8 @@ class MapillaryMotionBlurDataModule(pl.LightningDataModule):
         **MapLocDataset.default_cfg,
         "name": "mapillary_motion_blur",
         # paths and fetch
-        "data_dir": DATASETS_PATH / "MGL_final",
-        "noise_data_dir": DATASETS_PATH / "MGL_motion_blur",
+        "data_dir": DATASETS_PATH / "RHO_clean",
+        "noise_data_dir": DATASETS_PATH / "RHO_motion_blur",
         "local_dir": None,
         "tiles_filename": "tiles.pkl",
         "scenes": "???",
@@ -8173,7 +8173,7 @@ class MapillaryMotionBlurDataModule(pl.LightningDataModule):
         self.noise_root = Path(self.cfg.noise_data_dir)
         self.local_dir = self.cfg.local_dir or os.environ.get("TMPDIR")
         if self.local_dir is not None:
-            self.local_dir = Path(self.local_dir, "MGL_motion_blur")
+            self.local_dir = Path(self.local_dir, "RHO_motion_blur")
         if self.cfg.crop_size_meters < self.cfg.max_init_error:
             raise ValueError("The ground truth location can be outside the map.")
 
