@@ -12,7 +12,7 @@ from ...osm.prepare import OSMDataSource, download_and_prepare_osm
 from ...osm.viz import GeoPlotter
 from ...utils.geo import BoundaryBox, Projection
 from ...utils.io import write_json
-from .config_one import default_cfg, location_to_params
+from .config import default_cfg, location_to_params
 from .dataset import MapillaryDataModule
 from .download import MapillaryDownloader, fetch_image_infos, fetch_image_list
 
