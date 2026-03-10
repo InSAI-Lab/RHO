@@ -10,7 +10,7 @@ scenes:
   - antwerp
   - washington
   - tokyo
-split: splits_MGL_10loc.json
+split: splits_RHO_10loc.json
 loading:
   train:
     batch_size: 24

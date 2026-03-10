@@ -3,7 +3,7 @@ scenes:
   - detroit
 
 
-split: splits_MGL_hasselt_motion_blur.json
+split: splits_RHO_hasselt_motion_blur.json
 loading:
   train:
     batch_size: 36
