@@ -29,7 +29,7 @@ plt.rcParams.update({'figure.max_open_warning': 0})
 
 conf = OC.load(Path(maploc.__file__).parent / 'conf/data/mapillary_washington_pano.yaml')
 conf = OC.merge(conf, OC.create(yaml.full_load("""
-data_dir: "datasets/MGL_360"
+data_dir: "datasets/RHO_clean"
 loading:
     val: {batch_size: 1, num_workers: 0}
     train: ${.val}
