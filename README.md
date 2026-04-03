@@ -1,4 +1,6 @@
-# RHO
+# [CVPR 2026]: RHO: Robust Holistic OSM-Based Metric Cross-View Geo-Localization
+
+![RHO](CVPR26_RHO.png "RHO architecture.")
 
 This repository hosts the source code for RHO. 
 Compared with existing cross-view geolocalization algorithms that rely on 3D point clouds and satellite images, 
@@ -20,21 +22,7 @@ python3 -m pip install -r requirements/full.txt
 
 ## Download the dataset
 
-First you need a developper account at [Mapillary](https://www.mapillary.com/dashboard/developers) to get the free accesss token to download the clean dataset. 
-See [the offical doc](https://www.mapillary.com/developer/api-documentation?locale=zh_CN) for more instruction.
-
-After you get the free access token, you can download the dataset via:
-
-```bash
-python3 -m maploc.data.mapillary.split --token $YOUR_TOKEN --output_filename splits_MGL_{scene}.json --data_dir datasets/DIR_NAME --osm_source LATEST --force_auto_val_bbox
-python3 -m maploc.data.mapillary.prepare --token $YOUR_TOKEN --split_filename YOUR_SPLITS_FILE_NAME.json --osm_source CACHED
-```
-
-Then run the splits_join.py to produce the JSON file for evaluation, you can select the cities you want to include for the evaluation.
-
-```bash
-python3 datatsets/splits_join.py
-```
+CV-RHO Dataset will be released soon.
 
 ## Evaluation
 
